@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Checkout</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    <h1>Complete Your Payment</h1>
+    <script>
+        var options = {
+            "key": "YOUR_KEY_ID", // Enter the Key ID generated from the Dashboard
+            "amount": "{{ amount }}", // Amount is in currency subunits. Default currency is INR. Hence, 1000 refers to 10 INR
+            "currency": "INR",
+            "name": "BUMPRR",
+            "description": "Reserve Service",
+            "image": "https://example.com/your_logo", // Optional
+            "order_id": "{{ order_id }}", // Pass the `id` obtained in the previous step
+            "handler": function (response){
+                alert('Payment Successful! Payment ID: ' + response.razorpay_payment_id);
+                // You can redirect the user to a success page or handle post-payment logic here
+            },
+            "theme": {
+                "color": "#F37254"
+            }
+        };
+        var rzp1 = new Razorpay(options);
+        rzp1.open();
+    </script>
+</body>
+</html>

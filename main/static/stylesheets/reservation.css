@@ -1,0 +1,28 @@
+/* reservations/static/stylesheets/reservation.css */
+
+.service-card {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+}
+
+.btn-custom {
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.btn-custom:hover {
+  background-color: #0056b3;
+}
+
+/* Additional style for dropdown */
+.form-control {
+  height: auto; /* Ensure the dropdown is the right size */
+  padding: 10px; /* Padding for better usability */
+}
