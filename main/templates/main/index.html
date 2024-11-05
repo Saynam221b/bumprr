@@ -14,8 +14,6 @@
   <link href="{% static 'stylesheets/swiper.min.css' %}" rel="stylesheet" />
   <link href="{% static 'stylesheets/font-awesome.min.css' %}" rel="stylesheet" />
   <link href="{% static 'stylesheets/preloader.css' %}" rel="stylesheet" />
-  <link href="{% static 'stylesheets/header.css' %}" rel="stylesheet" />
-  <link href="{% static 'stylesheets/footer.css' %}" rel="stylesheet" />
   <link href="{% static 'stylesheets/service-card.css' %}" rel="stylesheet" />
   <link href="{% static 'stylesheets/owl.carousel.min.css' %}" rel="stylesheet" />
   <link href="{% static 'stylesheets/owl.theme.default.min.css' %}" rel="stylesheet" />
@@ -66,7 +64,7 @@
               <a class="nav-link js-scroll active" href="#slider-home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll" href="#services">Services</a>
+              <a class="nav-link js-scroll" href="#blog">Services</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll" href="#why">Why?</a>
@@ -89,16 +87,17 @@
     <div class="swiper-container parallax-slider">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <div class="bg-img valign" data-background="{% static 'images/slider-1.jpeg' %}" data-overlay-dark="5">
+          <div class="bg-img valign" data-background="{% static 'images/slider-3.jpg' %}" data-overlay-dark="5">
             <div class="container">
               <div class="row">
                 <div class="col-lg-6 col-md-12">
                   <div class="caption text-left">
+                    <br><br>
                     <h2>Quality Services Guaranted</h2>
                     <h1>Cleaning Services</h1>
                     <h3>Phone: 00000000</h3>
                     <div class="home-button-box home-slider-btn">
-                      <a href="#contact" class="button home-btn js-scroll">Contact Us</a>
+                      <a href="#0" class="button home-btn js-scroll">Contact Us</a>
                     </div>
                   </div>
                 </div>
@@ -107,14 +106,17 @@
           </div>
         </div>
         <div class="swiper-slide">
-          <div class="bg-img valign" data-background="{% static 'images/slider-3.jpeg' %}" data-overlay-dark="5">
+          <div class="bg-img valign" data-background="{% static 'images/slider-1.jpg' %}" data-overlay-dark="5">
             <div class="container">
               <div class="row">
                 <div class="col-lg-6 col-md-12">
                   <div class="caption text-left">
-                    <br /><br /><br /><br /><br /><br /><br /><br /><br />
+                    <br><br>
+                    <h2>BUMPRR</h2>
+                    <h1>BUMP UP YOUR RIDE!</h1>
+                    <h3>Phone: +00000000</h3>
                     <div class="home-button-box home-slider-btn">
-                      <a href="#contact" class="button home-btn js-scroll">Contact Us</a>
+                      <a href="#0" class="button home-btn js-scroll">Contact Us</a>
                     </div>
                   </div>
                 </div>
@@ -130,234 +132,128 @@
 
 
 
-  <!-- Repair Services Section Start -->
-  <section id="services" class="theme-repair-services section-padding">
+
+  <!-- Service Section Start -->
+  <section id="blog" class="blog-area section-padding">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 col-md-12">
           <div class="section-title">
-            <h5>We offer best rapair services</h5>
-            <h2>Our Services</h2>
+            <h5>OUR SERVICES</h5>
+            <h2>SERVICES</h2>
           </div>
         </div>
       </div>
-      <div class="row d-flex align-items-center">
-        <section class="articles">
-          <article>
-            <div class="article-wrapper">
-              <figure>
-                <img src="{% static 'images/partners/c-6.jpeg' %}" alt="" />
-              </figure>
-              <div class="article-body">
-                <h2>Daily Washing
-                </h2>
-                <p>
-                  Keep your car sparkling clean with our daily washing service. A fresh look every day is just a wash
-                  away!
-                </p>
-                <a href="#" class="read-more">
-                  Read more <span class="sr-only">about this is some title</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd"
-                      d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                      clip-rule="evenodd" />
-                  </svg>
-                </a>
-              </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 wow fadeInLeft" data-wow-delay="0.2s">
+          <div class="card">
+            <img class="card-img" src="{% static 'images/partners/c-7.jpeg' %}" alt="service image">
+            <div class="card-body">
+              <h4 class="card-title">Daily Washing</h4>
+              <p class="card-text">Keep your car sparkling clean with our daily washing service. A fresh look every day
+                is just a wash
+                away!</p>
             </div>
-          </article>
-          <article>
+          </div>
+        </div>
 
-            <div class="article-wrapper">
-              <figure>
-                <img src="{% static 'images/partners/c-7.jpeg' %}" alt="" />
-              </figure>
-              <div class="article-body">
-                <h2>Painting</h2>
-                <p>
-                  Whether it's a fresh coat or touch-ups, our painting services bring your car's color back to life,
-                  making it look as
-                  good as new.
-                </p>
-                <a href="#" class="read-more">
-                  Read more <span class="sr-only">about this is some title</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd"
-                      d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                      clip-rule="evenodd" />
-                  </svg>
-                </a>
-              </div>
+        <div class="col-lg-4 col-md-6 wow fadeInLeft" data-wow-delay="0.2s">
+          <div class="card">
+            <img class="card-img" src="{% static 'images/partners/c-1.jpeg' %}" alt="blog image">
+            <div class="card-body">
+              <h4 class="card-title">Painting</h4>
+              <p class="card-text">Whether it's a fresh coat or touch-ups, our painting services bring your car's color
+                back to life,
+                making it look as good as new.</p>
             </div>
-          </article>
-          <article>
+          </div>
+        </div>
 
-            <div class="article-wrapper">
-              <figure>
-                <img src="{% static 'images/partners/c-8.jpeg' %}" alt="" />
-              </figure>
-              <div class="article-body">
-                <h2>Denting</h2>
-                <p>
-                  Smooth out those dents and dings! Our expert denting services restore your car's shape with care and
-                  precision.
-                </p>
-                <a href="#" class="read-more">
-                  Read more <span class="sr-only">about this is some title</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd"
-                      d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                      clip-rule="evenodd" />
-                  </svg>
-                </a>
-              </div>
+        <div class="col-lg-4 col-md-6 wow fadeInLeft" data-wow-delay="0.2s">
+          <div class="card">
+            <img class="card-img" src="{% static 'images/partners/c-1.jpeg' %}" alt="blog image">
+            <div class="card-body">
+              <h4 class="card-title">Denting</h4>
+              <p class="card-text">Smooth out those dents and dings! Our expert denting services restore your car's
+                shape with care and precision.</p>
             </div>
-          </article>
-        </section>
+          </div>
+        </div>
 
-        <section class="articles">
-          <article>
-            <div class="article-wrapper">
-              <figure>
-                <img src="{% static 'images/partners/c-6.jpeg' %}" alt="" />
-              </figure>
-              <div class="article-body">
-                <h2>PPF (Paint Protection Film)</h2>
-                <p>
-                  Shield your car from scratches and debris with our premium Paint Protection Film. It's a protective layer that keeps
-                  your paint flawless.
-                  </p>
-                <a href="#" class="read-more">
-                  Read more <span class="sr-only">about this is some title</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd"
-                      d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                      clip-rule="evenodd" />
-                  </svg>
-                </a>
-              </div>
+        <div class="col-lg-4 col-md-6 wow fadeInLeft" data-wow-delay="0.2s">
+          <div class="card">
+            <img class="card-img" src="{% static 'images/partners/c-1.jpeg' %}" alt="blog image">
+            <div class="card-body">
+              <h4 class="card-title">PPF (Paint Protection Film)</h4>
+              <p class="card-text">Shield your car from scratches and debris with our premium Paint Protection Film.
+                It's a protective layer that keeps your paint flawless.</p>
             </div>
-          </article>
-          <article>
+          </div>
+        </div>
 
-            <div class="article-wrapper">
-              <figure>
-                <img src="{% static 'images/partners/c-6.jpeg' %}" alt="" />
-              </figure>
-              <div class="article-body">
-                <h2>Detailing & Paint Correction
-                </h2>
-                <p>
-                  Restore your car’s true shine! Our detailing and paint correction services remove imperfections, enhancing gloss
-                  and depth.
-                                  </p>
-                <a href="#" class="read-more">
-                  Read more <span class="sr-only">about this is some title</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd"
-                      d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                      clip-rule="evenodd" />
-                  </svg>
-                </a>
-              </div>
+        <div class="col-lg-4 col-md-6 wow fadeInLeft" data-wow-delay="0.2s">
+          <div class="card">
+            <img class="card-img" src="{% static 'images/partners/c-1.jpeg' %}" alt="blog image">
+            <div class="card-body">
+              <h4 class="card-title">Detailing & Paint Correction</h4>
+              <p class="card-text">Restore your car's true shine! Our detailing and paint correction services remove
+                imperfections, enhancing gloss
+                and depth.</p>
             </div>
-          </article>
-          <article>
+          </div>
+        </div>
 
-            <div class="article-wrapper">
-              <figure>
-                <img src="{% static 'images/partners/c-6.jpeg' %}" alt="" />
-              </figure>
-              <div class="article-body">
-                <h2>Interior Cleaning
-                </h2>
-                <p>
-                  From carpets to seats, we deep clean every inch of your interior, so it looks, smells, and feels brand new.
-                </p>
-                <a href="#" class="read-more">
-                  Read more <span class="sr-only">about this is some title</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd"
-                      d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                      clip-rule="evenodd" />
-                  </svg>
-                </a>
-              </div>
+        <div class="col-lg-4 col-md-6 wow fadeInLeft" data-wow-delay="0.2s">
+          <div class="card">
+            <img class="card-img" src="{% static 'images/partners/c-1.jpeg' %}" alt="blog image">
+            <div class="card-body">
+              <h4 class="card-title">Interior Cleaning</h4>
+              <p class="card-text">From carpets to seats, we deep clean every inch of your interior, so it looks,
+                smells, and feels brand new.
+              </p>
             </div>
-          </article>
-        </section>
+          </div>
+        </div>
 
-        <section class="articles">
-          <article>
-            <div class="article-wrapper">
-              <figure>
-                <img src="{% static 'images/partners/c-6.jpeg' %}" alt="" />
-              </figure>
-              <div class="article-body">
-                <h2> Ceramic and Graphene Coating</h2>
-                <p>
-                  Guard your paint with advanced Ceramic and Graphene coatings, adding unmatched durability and a glossy,
-                  hydrophobic finish.                </p>
-                <a href="#" class="read-more">
-                  Read more <span class="sr-only">about this is some title</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd"
-                      d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                      clip-rule="evenodd" />
-                  </svg>
-                </a>
-              </div>
+        <div class="col-lg-4 col-md-6 wow fadeInLeft" data-wow-delay="0.2s">
+          <div class="card">
+            <img class="card-img" src="{% static 'images/partners/c-1.jpeg' %}" alt="blog image">
+            <div class="card-body">
+              <h4 class="card-title">Ceramic and Graphene Coating</h4>
+              <p class="card-text"> Guard your paint with advanced Ceramic and Graphene coatings, adding unmatched
+                durability and a glossy,
+                hydrophobic finish.</p>
             </div>
-          </article>
-          <article>
+          </div>
+        </div>
 
-            <div class="article-wrapper">
-              <figure>
-                <img src="{% static 'images/partners/c-6.jpeg' %}" alt="" />
-              </figure>
-              <div class="article-body">
-                <h2>Insurance</h2>
-                <p>
-                  We partner with leading insurers to make sure you have peace of mind on the road. Protect your investment
-                  effortlessly                </p>
-                <a href="#" class="read-more">
-                  Read more <span class="sr-only">about this is some title</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd"
-                      d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                      clip-rule="evenodd" />
-                  </svg>
-                </a>
-              </div>
+        <div class="col-lg-4 col-md-6 wow fadeInLeft" data-wow-delay="0.2s">
+          <div class="card">
+            <img class="card-img" src="{% static 'images/partners/c-1.jpeg' %}" alt="blog image">
+            <div class="card-body">
+              <h4 class="card-title">Insurance</h4>
+              <p class="card-text">We partner with leading insurers to make sure you have peace of mind on the road.
+                Protect your investment
+                effortlessly</p>
             </div>
-          </article>
-          <article>
+          </div>
+        </div>
 
-            <div class="article-wrapper">
-              <figure>
-                <img src="{% static 'images/partners/c-6.jpeg' %}" alt="" />
-              </figure>
-              <div class="article-body">
-                <h2>Insurance Claim Assistance
-                </h2>
-                <p>
-                  Got into a scrape? Our team is here to simplify your insurance claim process, making it quick and hassle-free.
-                </p>
-                <a href="#" class="read-more">
-                  Read more <span class="sr-only">about this is some title</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd"
-                      d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                      clip-rule="evenodd" />
-                  </svg>
-                </a>
-              </div>
+        <div class="col-lg-4 col-md-6 wow fadeInLeft" data-wow-delay="0.2s">
+          <div class="card">
+            <img class="card-img" src="{% static 'images/partners/c-1.jpeg' %}" alt="blog image">
+            <div class="card-body">
+              <h4 class="card-title">Insurance Claim Assistance</h4>
+              <p class="card-text"> Got into a scrape? Our team is here to simplify your insurance claim process, making
+                it quick and hassle-free.
+              </p>
             </div>
-          </article>
-        </section>
+          </div>
+        </div>
       </div>
+    </div>
   </section>
-  <!-- Repair Services Section End -->
+  <!-- Service Section End -->
 
   <!-- Start Reservation Area -->
   <section id="why">
@@ -375,6 +271,7 @@
     </div>
   </section>
   <!-- End Reservation Area -->
+
   <!-- Partner Section Start -->
   <div>
     <div class="container">
