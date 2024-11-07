@@ -64,27 +64,45 @@
             </div>
         </nav>
     </header>
+
     <!-- End Header Navbar Area -->
 
     <div class="container mt-5 mb-5">
-      <form method="POST" action="{% url 'make_reservation' %}" class="text-center">
-        {% csrf_token %}
+        <form method="POST" action="{% url 'make_reservation' %}" class="text-center">
+            {% csrf_token %}
             <h2>Select Your Service</h2>
+    
+            <!-- Service Dropdown -->
             <div class="form-group">
                 <label for="service">Choose a service:</label>
-                <select name="service_price" id="service" class="form-control" required>
+                <select name="service" id="service" class="form-control" required>
                     <option value="" disabled selected>Select a service</option>
-                    <option value="100">Service 1 - $100</option>
-                    <option value="200">Service 2 - $200</option>
-                    <option value="300">Service 3 - $300</option>
+                    <option value="service1">Car Washing</option>
+                    <option value="service2">Service 2</option>
+                    <option value="service3">Service 3</option>
                 </select>
             </div>
-
+    
+            <!-- Plan Dropdown, which will change based on selected service -->
+            <div class="form-group">
+                <label for="plan">Choose a plan:</label>
+                <select name="service_price" id="plan" class="form-control" required>
+                    <option value="" disabled selected>Select a plan</option>
+                    <!-- Options will be populated dynamically -->
+                </select>
+            </div>
+    
+            <!-- Display Plan Cost -->
+            <div class="form-group">
+                <label for="plan-cost">Cost of the Plan:</label>
+                <input type="text" id="plan-cost" class="form-control" readonly placeholder="Cost will appear here">
+            </div>
+    
             <div class="form-group">
                 <label for="email">Email address</label>
                 <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" required>
             </div>
-
+    
             <button type="submit" class="btn btn-custom btn-lg">Reserve Now</button>
         </form>
     </div>
@@ -112,6 +130,5 @@
     <script src="{% static 'javascript/swiper.min.js' %}"></script>
     <script src="{% static 'javascript/wow.min.js' %}"></script>
     <script src="{% static 'javascript/main.js' %}"></script>
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </body>
 </html>

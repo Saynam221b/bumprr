@@ -147,118 +147,64 @@
 	
 })(jQuery);
 
-
+// contact
+ // Data structure for services, plans, and their costs
+var servicePlans = {
+	"service1": [
+	  { name: "Basic Plan", cost: "100" },
+	  { name: "Standard Plan", cost: "200" },
+	  { name: "Premium Plan", cost: "300" }
+	],
+	"service2": [
+	  { name: "Starter Plan", cost: "$15" },
+	  { name: "Pro Plan", cost: "$25" },
+	  { name: "Ultimate Plan", cost: "$35" }
+	],
+	"service3": [
+	  { name: "Silver Plan", cost: "$12" },
+	  { name: "Gold Plan", cost: "$22" },
+	  { name: "Platinum Plan", cost: "$40" }
+	]
+  };
   
-
-  // contact
-  document.getElementById("contactForm").addEventListener("submit", function (event) {
-	event.preventDefault(); // Prevent default form submission
+  window.onload = function() {
+	var serviceSel = document.getElementById("service");
+	var planSel = document.getElementById("plan");
+	var planCost = document.getElementById("plan-cost");
   
-	// Collect form data
-	let formData = new FormData(this);
-	
-	// Send AJAX POST request to the server
-	fetch("{% url 'contact' %}", {
-	  method: "POST",
-	  body: formData,
-	  headers: {
-		"X-CSRFToken": "{{ csrf_token }}"
-	  }
-	})
-	.then(response => response.json())
-	.then(data => {
-	  if (data.success) {
-		// Show the success message and play the animation
-		document.getElementById("resultMessage").style.display = "block";
-		playSendAnimation();
-	  } else {
-		alert("An error occurred. Please try again.");
-	  }
-	})
-	.catch(error => {
-	  console.error("Error:", error);
-	  alert("An error occurred. Please try again later.");
-	});
-  });
+	// When the service is selected, populate the plans dropdown
+	serviceSel.onchange = function() {
+	  // Clear the current plan options and cost
+	  planSel.innerHTML = '<option value="" disabled selected>Select a plan</option>';
+	  planCost.value = ''; // Clear the cost input
   
-  function playSendAnimation() {
-	const button = document.getElementById("sendLetter");
-	button.classList.add("sending-animation"); // Add class to start the animation
-  }
-  
-
-
-
-// reservation
-
-
-// Function to toggle the dropdown visibility
-function toggleDropdown() {
-	const dropdownOptions = document.getElementById("dropdownOptions");
-	dropdownOptions.classList.toggle("open");
-}
-
-// Function to handle service selection
-function selectOption(service, amount) {
-	const serviceDescriptions = {
-		'Denting': 'Smooth out those dents and dings!',
-		'Painting': 'Bring your car\'s color back to life!',
-		'Daily Washing': 'Keep your car sparkling clean!',
-		'PPF': 'Shield your car with Paint Protection Film!',
-		'Detailing & Paint Correction': 'Restore your car’s true shine!',
-		'Interior Cleaning': 'Deep clean for a brand new feel!',
-		'Ceramic and Graphene Coating': 'Unmatched durability and gloss!',
-		'Insurance': 'Peace of mind on the road!',
-		'Insurance Claim Assistance': 'Simplifying your claim process!',
-	};
-
-	document.getElementById("selectedService").textContent = service + " - " + serviceDescriptions[service];
-	document.getElementById("service").value = service.toLowerCase().replace(" ", "-");
-	document.getElementById("amount").value = amount; // Set the amount for payment
-	toggleDropdown(); // Close dropdown after selecting
-}
-
-// Close the dropdown if clicking outside of it
-document.addEventListener("click", function (event) {
-	const dropdown = document.querySelector(".dropdown-container");
-	const dropdownOptions = document.getElementById("dropdownOptions");
-	if (!dropdown.contains(event.target)) {
-		dropdownOptions.classList.remove("open");
-	}
-});
-
-// Handle the form submission
-document.querySelector('.styled-form').addEventListener('submit', function (e) {
-	e.preventDefault(); // Prevent the default form submission
-
-	const amount = document.getElementById('amount').value;
-	const options = {
-		key: 'YOUR_RAZORPAY_KEY_ID', // Replace with your Razorpay Key ID
-		amount: amount * 100, // Convert to paisa
-		currency: "INR", // Currency code
-		name: "BUMPRR", // Your company name
-		description: "Car Service Reservation",
-		handler: function (response) {
-			// Handle successful payment here
-			console.log(response);
-			alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
-
-			// Optionally, submit the form to your server for processing
-			this.submit(); // Submit the form after successful payment
-		}.bind(this),
-		prefill: {
-			name: document.getElementById('name').value,
-			email: document.getElementById('email').value,
-			contact: document.getElementById('phone').value,
-		},
-		notes: {
-			service: document.getElementById('service').value
-		},
-		theme: {
-			color: "#F37254" // Customize the theme color
+	  // Check if a service is selected
+	  if (this.value) {
+		var selectedService = this.value;
+		if (servicePlans[selectedService]) {
+		  var plans = servicePlans[selectedService];
+		  for (var i = 0; i < plans.length; i++) {
+			var option = document.createElement('option');
+			option.value = plans[i].name; // Plan name
+			option.textContent = plans[i].name; // Plan name
+			planSel.appendChild(option);
+		  }
 		}
+	  }
 	};
-
-	const rzp = new Razorpay(options);
-	rzp.open(); // Open the Razorpay payment popup
-});
+  
+	// When a plan is selected, display the corresponding cost
+	planSel.onchange = function() {
+	  var selectedPlan = this.value;
+	  var selectedService = serviceSel.value;
+	  
+	  if (selectedService && selectedPlan) {
+		var plans = servicePlans[selectedService];
+		for (var i = 0; i < plans.length; i++) {
+		  if (plans[i].name === selectedPlan) {
+			planCost.value = plans[i].cost; // Display the cost for the selected plan
+		  }
+		}
+	  }
+	};
+  };

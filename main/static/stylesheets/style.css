@@ -827,7 +827,7 @@ h5 {
 	padding-top: 12px;
 	padding-bottom: 12px;
 	height: 99px;
-	background: #fff;
+	background: #000981;
 }
 
 
@@ -880,7 +880,7 @@ h5 {
 
 .navbar-b.navbar-reduce {
 	transition: all .5s ease-in-out;
-	background-color: #fff;
+	background-color: #e1ff00;
 	padding-top: 15px;
 	padding-bottom: 15px;
 	-webkit-animation: 500ms ease-in-out 0s normal fadeInDown;
